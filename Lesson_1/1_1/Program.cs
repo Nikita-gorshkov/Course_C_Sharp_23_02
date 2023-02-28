@@ -1,12 +1,13 @@
-﻿int a = int.Parse(Console.Readline()!);
-int b = int.Parse(Console.Readline()!);
-if (b == a * a)
-{
- Console.WriteLine("Yes");  
+﻿Console.WriteLine("Hello");
 
+int a = int.Parse(Console.ReadLine()!);
+int b = int.Parse(Console.ReadLine()!);
+if (a == b * b)
+{
+    Console.WriteLine("Yes");
 }
 else
 {
-    Console.WriteLine("No");  
-
+    Console.WriteLine("No");
 }
+
