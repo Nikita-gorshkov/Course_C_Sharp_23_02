@@ -1,4 +1,2 @@
-﻿string s = Console.Readline()!;
-int num = int.Parse(s);
-
+﻿int num = int.Parse(Console.ReadLine()!);
 Console.WriteLine(num * num);
