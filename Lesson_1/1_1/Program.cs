@@ -8,5 +8,5 @@ if (b == a * a)
 else
 {
     Console.WriteLine("No");  
-    
+
 }
