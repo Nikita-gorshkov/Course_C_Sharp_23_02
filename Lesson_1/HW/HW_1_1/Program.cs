@@ -7,8 +7,12 @@ if (a > b)
     Console.Write("Max=");
     Console.WriteLine(a);
 }
-else
+else if (b > a)
 {
     Console.Write("Max=");
     Console.WriteLine(b);
+}
+else 
+{
+    Console.Write("Odinakovie");
 }
