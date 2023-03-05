@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Вводим четверть - а он еам в ответ диапозоны координат
 Console.WriteLine("Koordinatnaya ploskost");
 void Quarters(int num)
 {
