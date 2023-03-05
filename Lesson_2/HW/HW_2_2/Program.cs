@@ -7,8 +7,8 @@ Console.WriteLine("Zadacha_2");
 void GivNum (int num)
 {
     Console.WriteLine(num);
-    Console.WriteLine($"{num / 100}");
-    Console.WriteLine($"{num % 10}");
+    Console.Write($"{num / 100}");
+    Console.Write($"{num % 10}");
 }
   int num = new Random().Next(100, 1000);
 
