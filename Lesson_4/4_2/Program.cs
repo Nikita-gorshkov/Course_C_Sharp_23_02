@@ -1,5 +1,5 @@
-﻿// 1. Напишите программу, которая принимает
-//    на вход число и выдаёт количество цифр в числе.
+﻿// See https://aka.ms/new-console-template for more information
+
 int LengthNum(int num)
 {
     int a=0;
