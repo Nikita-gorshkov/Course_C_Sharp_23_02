@@ -1,15 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// // 2. Напишите программу, которая принимает на вход
+//    число N и выдаёт произведение чисел от 1 до N.
 
-int LengthNum(int num)
+// 2. Напишите программу, которая принимает на вход
+//    число N и выдаёт произведение чисел от 1 до N
+int CompositionNum(int num)
 {
-    int a=0;
-    for(int i=1; num>0; i++)
-       { num=num/10;
-        a++;
-       }
-    return a;
+    int mutiply = 1;
+    for(int i = 1; num >= i; i++)
+        mutiply *= i;
+
+    return mutiply;
 }
-Console.WriteLine("Введите число: ");
-int num = int.Parse(Console.ReadLine()!);
-int result = LengthNum(num);
+int A = int.Parse(Console.ReadLine()!);
+int result = CompositionNum(A);
 Console.WriteLine(result);
