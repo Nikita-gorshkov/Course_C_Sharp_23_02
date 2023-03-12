@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задать массив из 12 эл, заполненный случ.числами в промежутке (-9,9). Найти сумму положит и отриц элементов массива.
+
