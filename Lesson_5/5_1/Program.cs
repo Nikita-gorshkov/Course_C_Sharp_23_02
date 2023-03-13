@@ -1,10 +1,11 @@
-﻿// 
+﻿// Создать массив. Вывести его ещё раз, но уже чтоб элементы его поменяли знаки (1,-2) --> (-1,2)
 void Print(int[] arr)
    {
     int size = arr.Length;
     for (int i = 0; i < size; i++ )
         Console.Write($"{arr[i]} ");
         Console.WriteLine();
+        
    }
 
 int[] MasNums(int size, int from, int to)
@@ -15,20 +16,15 @@ int[] MasNums(int size, int from, int to)
     return arr;
    }
 
-void SumPosNeg(int[] arr)
+void MasConverter(int[] arr)
 {
-    int pos, neg;
-    pos = neg = 0;
-
     for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] > 0)
-            pos += arr[i];
-        else
-            neg += arr[i]; 
-    }
-    Console.WriteLine($"Positive: {pos}, negative: {neg} ");
+    
+           arr[i] = -arr[i];
+   
 }
+    
+
 
 Console.Write("Vvedi num: ");
    int num = int.Parse(Console.ReadLine()!);
@@ -39,4 +35,5 @@ Console.Write("Vvedi stop: ");
 
    int[] mass = MasNums(num, start, stop);
    Print(mass); 
-   SumPosNeg(mass);
+   MasConverter(mass);
+   Print(mass); 
