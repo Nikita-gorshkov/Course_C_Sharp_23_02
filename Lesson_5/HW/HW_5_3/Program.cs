@@ -11,9 +11,10 @@ void Print(double[] arr)
 double[] MasNums(int size, int from, int to)
    {
     double[]arr = new double[size];
-
-    for (int i = 0; i < size; i++)
-        arr[i] = new Random().Next(from, to);
+    Random n_new = new Random();
+    for (int i = 1; i < size; i++)
+        arr[i] = Math.Round(n_new.NextDouble() * (from + to) - from, 2);
+   
     return arr;
    }
 
@@ -32,7 +33,7 @@ void MaxMin(double[] arr)
    } 
 Console.WriteLine($"Minimum: {min}, Maximum:  {max}.  ");
 
-Console.WriteLine($"Raznost: ");
+Console.Write($"Raznost: ");
 Console.Write(Math.Round(max - min, 2));
 } 
 
