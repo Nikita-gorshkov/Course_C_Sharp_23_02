@@ -1,4 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Задайте двумерный массив размера m на n, каждый
+// элемент в массиве находится по формуле: Aₙₙ = m+n.
+// Выведите полученный массив на экран.
+
 
 void Print(int[,] arr)
    {
