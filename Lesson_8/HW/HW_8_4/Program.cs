@@ -1,4 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Задайте двумерный массив из целых чисел. Напишите программу,
+// которая удалит строку и столбец, на пересечении которых расположен наименьший элемент массива.
+
 void Print(int[,] arr)
 {
     int row_size = arr.GetLength(0);
@@ -7,7 +9,8 @@ void Print(int[,] arr)
     for (int i = 0; i < row_size; i++)
     {
         for (int j = 0; j < column_size; j++)
-            Console.Write($" {arr[i, j],3} ");
+        
+        Console.Write($" {arr[i, j]} ");
         Console.WriteLine();
     }
     Console.WriteLine();
@@ -19,42 +22,59 @@ int[,] MassNums(int row, int column, int from, int to)
 
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            arr[i, j] = new Random().Next(from, to);
+            arr[i, j] = new Random().Next(from, to + 1);
     return arr;
 }
 
-int[,] MatrixProduct(int[,] arr_first, int[,] arr_second)
+int[] Min(int[,] arr)
 {
-    int row_size = arr_first.GetLength(0);
-    int column_size = arr_first.GetLength(1);
-    int[,] pr_matrix = new int[row_size, column_size];
+    int min = arr[0, 0];
+    int[] ind = new int[2];
 
-    if (row_size != arr_second.GetLength(0) || column_size != arr_second.GetLength(1)) 
-    
-    return pr_matrix;
-    
-    for (int i = 0; i < row_size; i++)       
-        for (int j = 0; j < column_size; j++)
-            pr_matrix[i, j] = arr_first[i, j] * arr_second[i, j];            
-    return pr_matrix;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+            if (min > arr[i, j])
+            {
+                min = arr[i, j];
+                ind[0] = i;
+                ind[1] = j;
+            }
+    }
+    Console.WriteLine(arr[ind[0], ind[1]]);
+    return ind;
 }
 
+void WithoutRC(int[,] arr, int[] minInd)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+            if (minInd[0] == i || minInd[1] == j) 
+            continue;
 
-Console.Write("Enter the number of rows 1: ");
-int row_1 = int.Parse(Console.ReadLine());
-Console.Write("Enter the number of columns 1: ");
-int column_1 = int.Parse(Console.ReadLine());
+            else Console.Write($"{arr[i, j],3}");
+        Console.WriteLine();
 
-Console.Write("Enter the number of rows 2: ");
-int row_2 = int.Parse(Console.ReadLine());
-Console.Write("Enter the number of columns 2: ");
-int column_2 = int.Parse(Console.ReadLine());
+    }
+    Console.WriteLine();
+}
 
-int[,] arr_1 = MassNums(row_1, column_1, 1, 5);
-Print(arr_1);
-int[,] arr_2 = MassNums(row_2, column_2, 1, 5);
-Print(arr_2);
+Console.Write("Количество строк: ");
+int row_num = int.Parse(Console.ReadLine()!);
+Console.Write("Количество столбцов: ");
+int column_num = int.Parse(Console.ReadLine()!);
 
-int[,] res_matrix = MatrixProduct(arr_1, arr_2);
-Print(res_matrix);
+Console.Write("Заполнение массива от: ");
+int start = int.Parse(Console.ReadLine()!);
+Console.Write("Заполнение массива до: ");
+int stop = int.Parse(Console.ReadLine()!);
 
+
+int[,] mass = MassNums(row_num, column_num, start, stop);
+Print(mass);
+
+Console.WriteLine("Массив без строки и столба с минимальным элементом: ");
+
+int[] rezult = Min(mass);
+WithoutRC(mass, rezult);
